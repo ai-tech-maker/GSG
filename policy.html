@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tech NexPro</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* Fixed Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      padding-top: 80px;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    .navbar-nav .nav-link {
+      color: #007bff;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 10px 15px;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #28a705;
+      text-decoration: underline;
+    }
+
+    .navbar-brand img {
+      transition: transform 0.3s ease;
+    }
+
+    .navbar-brand:hover img {
+      transform: scale(1.1);
+    }
+
+    .navbar-collapse {
+      justify-content: flex-end;
+    }
+
+    .navbar-toggler {
+      border: none;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+      background-color: #ffffff;
+    }
+
+    header h1 {
+      color: #004080;
+      margin-bottom: 10px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto 50px;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #004080;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    #backToTopBtn {
+      position: fixed;
+      bottom: 40px;
+      right: 20px;
+      z-index: 999;
+      display: none;
+    }
+
+    footer {
+      background-color: #343a40;
+      color: #fff;
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    .footer-column {
+      text-align: left;
+    }
+
+    footer a {
+      color: #f8f9fa;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="img/logobg.png" alt="Tech NexPro Logo" width="100" height="70" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="service.html">Service</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="policy.html">Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Company Policy</h1>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <h2>1. Attendance and Participation</h2>
+    <ul>
+      <li>Students are expected to log in and participate weekly.</li>
+      <li>All assignments and discussions should be completed by the posted deadlines.</li>
+    </ul>
+
+    <h2>2. Communication</h2>
+    <ul>
+      <li>All course-related communication will be through the official LMS and email.</li>
+      <li>Allow 24–48 hours for responses to emails.</li>
+    </ul>
+
+    <h2>3. Academic Integrity</h2>
+    <ul>
+      <li>All submitted work must be original.</li>
+      <li>Plagiarism and cheating will result in disciplinary action.</li>
+    </ul>
+
+    <h2>4. Technical Requirements</h2>
+    <ul>
+      <li>Stable internet connection is required.</li>
+      <li>Use of a laptop or desktop with updated browser is recommended.</li>
+    </ul>
+
+    <h2>5. Late Work Policy</h2>
+    <ul>
+      <li>Late submissions may incur penalties unless prior arrangements are made.</li>
+    </ul>
+
+    <h2>6. Accessibility & Accommodations</h2>
+    <ul>
+      <li>Contact the instructor or student services if accommodations are needed.</li>
+    </ul>
+  </main>
+
+  <!-- Back to Top -->
+  <a href="#top" id="backToTopBtn" class="btn btn-primary">Back to Top</a>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row text-start">
+        <div class="col-md-4 mb-4 footer-column">
+          <h5>Contact Us</h5>
+          <p><strong>Phone:</strong> +91 63696 80825</p>
+          <p><strong>Phone:</strong> +91 79043 92365</p>
+          <p><strong>Phone:</strong> +91 93605 91112</p>
+          <p><strong>Email:</strong> technexpro@gmail.com</p>
+          <p><strong>Location:</strong> Vaniyambadi, Thirupathur dist.</p>
+        </div>
+        <div class="col-md-4 mb-4 footer-column">
+          <h5>Follow Us</h5>
+          <a href="https://www.instagram.com" target="_blank" class="btn btn-outline-light btn-sm mx-2">Instagram</a>
+          <a href="https://www.facebook.com" target="_blank" class="btn btn-outline-light btn-sm mx-2">Facebook</a>
+          <a href="https://www.youtube.com" target="_blank" class="btn btn-outline-light btn-sm mx-2">YouTube</a>
+          <a href="https://www.twitter.com" target="_blank" class="btn btn-outline-light btn-sm mx-2">Twitter</a>
+          <a href="https://www.linkedin.com" target="_blank" class="btn btn-outline-light btn-sm mx-2">LinkedIn</a>
+        </div>
+        <div class="col-md-4 mb-4 footer-column">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="policy.html">Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-4">
+        <p>&copy; 2025 Tech NexPro. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const backToTopBtn = document.getElementById("backToTopBtn");
+    window.onscroll = function () {
+      if (document.documentElement.scrollTop > 300) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    };
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
