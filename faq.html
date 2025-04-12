@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech NexPro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Fixed Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: white; /* Changed to white */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added subtle shadow for better separation */
+        }
+
+        body {
+            padding-top: 80px; /* Adjust this based on your navbar height */
+        }
+
+        /* Navbar Links */
+        .navbar-nav .nav-link {
+            color: #007bff; /* Blue color for links */
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #28a705; /* Green color on hover */
+            text-decoration: underline;
+        }
+
+        /* Navbar Branding */
+        .navbar-brand img {
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand:hover img {
+            transform: scale(1.1); /* Slight zoom effect on logo hover */
+        }
+
+        /* Responsive adjustments */
+        .navbar-collapse {
+            justify-content: flex-end; /* Align items to the right */
+        }
+
+        /* Mobile Navbar Toggler */
+        .navbar-toggler {
+            border: none;
+        }
+
+        /* Profile Card Style */
+        .profile-card {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-img {
+            width: 150px; /* Fixed width */
+            height: 150px; /* Fixed height for circular shape */
+            object-fit: cover;
+            border-radius: 50%; /* Makes the image round */
+            margin-bottom: 15px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .profile-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin: 10px 0 5px;
+        }
+
+        .profile-card p {
+            font-size: 1rem;
+            color: #6c757d; /* Color for the role */
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            .profile-img {
+                width: 120px; /* Smaller size for mobile */
+                height: 120px;
+            }
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .key-point {
+            margin-bottom: 20px;
+        }
+
+        .key-point h5 {
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .key-point p {
+            font-size: 1.1rem;
+            color: #6c757d;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #f8f9fa;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="img/logobg.png" alt="Tech NexPro Logo" width="100" height="70" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="service.html">service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">Faq</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="policy.html">Policy</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- FAQ Section -->
+<section class="container my-5">
+    <h2 class="text-center mb-4">Frequently Asked Questions (FAQ)</h2>
+    <hr>
+    <p class="text-center">Find answers to some of the most common questions about Tech NexPro and our services.</p>
+
+    <!-- FAQ Accordion -->
+    <div class="accordion" id="faqAccordion">
+        
+        <!-- FAQ 1 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    What services does Tech NexPro offer?
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Tech NexPro offers both **software solutions** and **IT education** services. We provide cutting-edge, tailor-made software solutions for businesses, along with comprehensive IT education programs that cover everything from web development to data science, mobile app development, and more.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                    aria-expanded="false" aria-controls="collapseTwo">
+                    How can I enroll in your IT education programs?
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    To enroll in our educational programs, you can visit our **Courses** page, where you'll find information about the courses we offer. You can then sign up directly through the website or contact us for further details about specific courses or training schedules.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                    aria-expanded="false" aria-controls="collapseThree">
+                    What makes Tech NexPro different from other IT companies?
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    At Tech NexPro, we focus on both **software solutions** and **education**, ensuring that our clients receive the best of both worlds. Our unique approach to **hands-on training**, combined with collaboration with industry leaders, ensures our learners are job-ready and equipped with the most current, real-world skills. We are also committed to **innovation** and pushing the boundaries of technology in every project we undertake.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                    aria-expanded="false" aria-controls="collapseFour">
+                    Are your education programs available internationally?
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Yes! Our education programs are available **globally**, and we offer courses in **multiple languages** to cater to learners from different regions. Regardless of your location, you can access our cutting-edge educational content and receive training that prepares you for success in the IT industry.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                    aria-expanded="false" aria-controls="collapseFive">
+                    What industries do you serve?
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Tech NexPro serves a variety of industries including **technology**, **education**, **finance**, **healthcare**, and more. Our software solutions are tailored to meet the specific needs of businesses in these sectors, and our educational programs equip learners with the skills needed to thrive in any industry.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix"
+                    aria-expanded="false" aria-controls="collapseSix">
+                    Do you offer career support after completing a program?
+                </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Yes! We provide **career support** to our students and alumni, including **job placement assistance**, **resume building**, and **interview coaching**. We also collaborate with industry partners to offer real-world projects and internships to help our students gain hands-on experience and increase their employability.
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+</body>
+</html>
