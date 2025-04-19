@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech NexPro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="icon" href="img/favicon.png" type="image/png">
+
     <style>
         /* Fixed Navbar */
         .navbar {
@@ -161,6 +163,10 @@
             font-weight: bold;
             margin-top: 10px;
         }
+        .price strike{
+            position: relative;
+            font-size: 13px;            
+        }
 
         .price {
             color: #28a745;
@@ -169,17 +175,130 @@
         .duration {
             color: #007bff;
         }
+        html {
+            scroll-behavior: smooth;
+        }
+        .nav-link.active {
+            color: #28a705 !important;
+            text-decoration: underline;
+        }
+        .popup-box {
+            position: relative; /* Important */
+            background: #e3f2fd; /* or rgba for transparency */
+            color: black;
+            font-family: cursive;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        .popup-box h3 {
+            margin-top: 0;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .popup-box ul {
+            list-style: none;
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+
+        .popup-box ul li {
+            margin: 8px 0;
+            font-size: 15px;
+        }
+
+        .popup-box .highlight {
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .apply-btn {
+            background-color: white;
+            color: black;
+            padding: 8px 14px;
+            border: 2px solid black;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .apply-btn:hover {
+            background-color: black;
+            color: white; 
+        }
+        .btn-close{
+            position: absolute;
+            right: 0px;
+            top: 10px;
+        }
+        .arrow-badge {
+            position: absolute;
+            top: 0px;
+            right: 10px;
+            background: rgb(248, 3, 3);
+            color: white;
+            padding: 4px 4px;
+            font-size: 13px;
+            font-weight: bold;
+            z-index: 10;
+        }
+        .price-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: red;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+
     </style>
 </head>
 
 <body>
+ <!-- Bootstrap Modal for Admissions Alert -->
+<div class="modal fade" id="admissionsModal" tabindex="-1" aria-labelledby="admissionsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content popup-box"> <!-- ADD modal-content HERE -->
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="arrow-badge">Offers on Live </div>
+      <h3>🚀 Join Now & Jumpstart Your Coding Journey!</h3>
+      <ul>
+        <li>💡 Hands-on Projects | Practical Learning | Personal Mentorship</li>
+        <li>🔥 Limited-Time Offer Going On!</li>
+        <li>📞 Call now: 123-456-7890</li>
+        <li>📍 Near Anna Nagar, Chennai</li>
+      </ul>
+      <div class="highlight">🌀 <strong>Limited seats available!</strong></div>
+      <div class="modal-footer border-0 justify-content-center">
+        <a href="contact.html" class="btn btn-light fw-bold">Apply Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- Script to show modal after page loads -->
+  <script>
+    window.addEventListener('load', () => {
+      const myModal = new bootstrap.Modal(document.getElementById('admissionsModal'));
+      myModal.show();
+    });
+  </script>
+  
     <div id="top"></div>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="img/logobg.png" alt="Tech NexPro Logo" width="100" height="70" class="d-inline-block align-text-top">
+                <img src="img/logo.png" alt="Tech NexPro Logo" width="100" height="70" class="d-inline-block align-text-top">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -210,16 +329,6 @@
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-    <header>
-        <div>
-        <h1>Welcome to Tech NexPro</h1>
-        <p>Your gateway to professional IT courses and solutions</p>
-        <a href="contact.html">Contact</a>
-
-    </div>
-    </header><br>
 
     <!-- Carousel (Slider) Section 
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -256,7 +365,7 @@
         </button>
     </div>
     -->
-
+    <div style="height: 70px;"></div>
     <!-- IT Courses Section -->
     <section class="container my-5">
         <h2 class="text-center mb-4">Our IT Courses</h2><hr>
@@ -266,10 +375,11 @@
                 <div class="card">
                     <img src="img/b1.png" class="card-img-top" alt="Web Development">
                     <div class="card-body">
+                        <div class="price-badge">Offer</div>                
                         <h5 class="card-title">Web Development</h5>
                         <p class="card-text">Learn to build modern websites and web applications.</p>
                         <div class="price-duration">
-                            <span class="price">Fee:5k</span> | <span class="duration">3 Months</span>
+                            <span class="price"><strike>₹1499</strike> ₹499</span> | <span class="duration">3 Months</span>
                         </div>
                     </div>
                 </div>
@@ -279,10 +389,11 @@
                 <div class="card">
                     <img src="img/b2.png" class="card-img-top" alt="Data Science">
                     <div class="card-body">
+                        <div class="price-badge">Offer</div>       
                         <h5 class="card-title">Data Science</h5>
                         <p class="card-text">Dive into data analytics and machine learning.</p>
                         <div class="price-duration">
-                            <span class="price">Fee:5k</span> | <span class="duration">3 Months</span>
+                            <span class="price"><strike>₹1499</strike> ₹499</span> | <span class="duration">3 Months</span>
                         </div>
                     </div>
                 </div>
@@ -292,10 +403,11 @@
                 <div class="card">
                     <img src="img/b3.png" class="card-img-top" alt="Mobile App Development">
                     <div class="card-body">
+                        <div class="price-badge">Offer</div>                
                         <h5 class="card-title">Mobile App Development</h5>
                         <p class="card-text">Build amazing mobile apps for iOS and Android.</p>
                         <div class="price-duration">
-                            <span class="price">Fee:5k</span> | <span class="duration">3 Months</span>
+                            <span class="price"><strike>₹1499</strike> ₹499</span> | <span class="duration">3 Months</span>
                         </div>
                     </div>
                 </div>
@@ -305,10 +417,11 @@
                 <div class="card">
                     <img src="img/b5.png" class="card-img-top" alt="Python">
                     <div class="card-body">
+                        <div class="price-badge">Offer</div>                
                         <h5 class="card-title">Python</h5>
                         <p class="card-text">Learn Python programming for web and automation tasks.</p>
                         <div class="price-duration">
-                            <span class="price">Fee:5k</span> | <span class="duration">3 Months</span>
+                            <span class="price"><strike>₹1499</strike> ₹499</span> | <span class="duration">3 Months</span>
                         </div>
                     </div>
                 </div>
@@ -318,10 +431,11 @@
                 <div class="card">
                     <img src="img/b7.png" class="card-img-top" alt="Java">
                     <div class="card-body">
+                        <div class="price-badge">Offer</div>                
                         <h5 class="card-title">Java</h5>
                         <p class="card-text">Learn Java programming for web and automation tasks.</p>
                         <div class="price-duration">
-                            <span class="price">Fee:5k</span> | <span class="duration">3 Months</span>
+                            <span class="price"><strike>₹1499</strike> ₹499</span> | <span class="duration">3 Months</span>
                         </div>
                     </div>
                 </div>
@@ -332,9 +446,10 @@
                     <img src="img/b8.png" class="card-img-top" alt="PHP">
                     <div class="card-body">
                         <h5 class="card-title">PHP</h5>
+                        <div class="price-badge">Offer</div>                
                         <p class="card-text">Learn PHP programming for web and automation tasks.</p>
                         <div class="price-duration">
-                            <span class="price">Fee:5k</span> | <span class="duration">3 Months</span>
+                            <span class="price"><strike>₹1499</strike> ₹499</span> | <span class="duration">3 Months</span>
                         </div>
                     </div>
                 </div>
@@ -344,10 +459,11 @@
                 <div class="card">
                     <img src="img/b9.png" class="card-img-top" alt="MYSQL">
                     <div class="card-body">
+                        <div class="price-badge">Offer</div>                
                         <h5 class="card-title">MYSQL</h5>
                         <p class="card-text">Understand database design and management using MySQL. </p>
                         <div class="price-duration">
-                            <span class="price">Fee:5k</span> | <span class="duration">3 Months</span>
+                            <span class="price"><strike>₹1499</strike> ₹499</span> | <span class="duration">3 Months</span>
                         </div>
                     </div>
                 </div>
@@ -357,10 +473,11 @@
                 <div class="card">
                     <img src="img/b11.png" class="card-img-top" alt="uiux">
                     <div class="card-body">
+                        <div class="price-badge">Offer</div>                
                         <h5 class="card-title">UI/UX Design</h5>
                         <p class="card-text">Learn styling and layout techniques for beautiful websites.</p>
                         <div class="price-duration">
-                            <span class="price">Fee:5k</span> | <span class="duration">3 Months</span>
+                            <span class="price"><strike>₹1499</strike> ₹499</span> | <span class="duration">3 Months</span>
                         </div>
                     </div>
                 </div>
@@ -370,10 +487,11 @@
                 <div class="card">
                     <img src="img/b7.png" class="card-img-top" alt="JavaScript">
                     <div class="card-body">
+                        <div class="price-badge">Offer</div>                
                         <h5 class="card-title">JavaScript</h5>
                         <p class="card-text">Learn JavaScript for interactive and dynamic web content.</p>
                         <div class="price-duration">
-                            <span class="price">Fee:5k</span> | <span class="duration">3 Months</span>
+                            <span class="price"><strike>₹1499</strike> ₹499</span> | <span class="duration">3 Months</span>
                         </div>
                     </div>
                 </div>
@@ -383,10 +501,11 @@
                 <div class="card">
                     <img src="img/b12.png" class="card-img-top" alt="Front-End Development">
                     <div class="card-body">
+                        <div class="price-badge">Offer</div>                
                         <h5 class="card-title">Front-End Development</h5>
                         <p class="card-text">Master HTML, CSS, and JavaScript for building beautiful websites.</p>
                         <div class="price-duration">
-                            <span class="price">Fee:5k</span> | <span class="duration">3 Months</span>
+                            <span class="price"><strike>₹1499</strike> ₹499</span> | <span class="duration">3 Months</span>
                         </div>
                     </div>
                 </div>
@@ -394,12 +513,13 @@
             <!-- Course 11: Back-End Development -->
             <div class="col-md-3 col-sm-6 mb-4">
                 <div class="card">
+                    <div class="price-badge">Offer</div>                
                     <img src="img/b14.png" class="card-img-top" alt="Back-End Development">
                     <div class="card-body">
                         <h5 class="card-title">Back-End Development</h5>
                         <p class="card-text">Learn server-side programming with Node.js, Python, and more.</p>
                         <div class="price-duration">
-                            <span class="price">Fee:5k</span> | <span class="duration">3 Months</span>
+                            <span class="price"><strike>₹1499</strike> ₹499</span> | <span class="duration">3 Months</span>
                         </div>
                     </div>
                 </div>
@@ -407,13 +527,14 @@
             <!-- Course 4:Artificial Intelligence -->
             <div class="col-md-3 col-sm-6 mb-4">
                 <div class="card">
+                    <div class="price-badge">Offer</div>                
                     <img src="img/b13.png" class="card-img-top" alt="Artificial Intelligence">
                     <div class="card-body">
                         <h5 class="card-title">Artificial Intelligence</h5>
                         <p class="card-text">
                             Explore machine learning, neural networks, and AI technologies.</p>
                         <div class="price-duration">
-                            <span class="price">Fee:5k</span> | <span class="duration">3 Months</span>
+                            <span class="price"><strike>₹1499</strike> ₹499</span> | <span class="duration">3 Months</span>
                         </div>
                     </div>
                 </div>
@@ -447,7 +568,7 @@
                 <div class="col-md-4 mb-4">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="index.html" class="text-white" >Home</a></li>
                         <li><a href="about.html" class="text-white">About</a></li>
                         <li><a href="contact.html" class="text-white">Contact</a></li>
                         <li><a href="#" class="text-white">Terms & Conditions</a></li>
@@ -460,8 +581,8 @@
             </div>
         </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </script>
 </body>
 
 </html>
