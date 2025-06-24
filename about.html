@@ -1,357 +1,456 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tech NexPro</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <style>
-        /* Fixed Navbar */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: white; /* Changed to white */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added subtle shadow for better separation */
-        }
+      /* Fixed Navbar */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: white; /* Changed to white */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added subtle shadow for better separation */
+      }
 
-        body {
-            padding-top: 80px; /* Adjust this based on your navbar height */
-        }
+      body {
+        padding-top: 80px; /* Adjust this based on your navbar height */
+      }
 
-        /* Navbar Links */
-        .navbar-nav .nav-link {
-            color: #007bff; /* Blue color for links */
-            font-weight: bold;
-            text-transform: uppercase;
-            padding: 10px 15px;
-            transition: color 0.3s ease;
-        }
+      /* Navbar Links */
+      .navbar-nav .nav-link {
+        color: #007bff; /* Blue color for links */
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 10px 15px;
+        transition: color 0.3s ease;
+      }
 
-        .navbar-nav .nav-link:hover {
-            color: #28a705; /* Green color on hover */
-            text-decoration: underline;
-        }
+      .navbar-nav .nav-link:hover {
+        color: #28a705; /* Green color on hover */
+        text-decoration: underline;
+      }
 
-        /* Navbar Branding */
-        .navbar-brand img {
-            transition: transform 0.3s ease;
-        }
+      /* Navbar Branding */
+      .navbar-brand img {
+        transition: transform 0.3s ease;
+      }
 
-        .navbar-brand:hover img {
-            transform: scale(1.1); /* Slight zoom effect on logo hover */
-        }
+      .navbar-brand:hover img {
+        transform: scale(1.1); /* Slight zoom effect on logo hover */
+      }
 
-        /* Responsive adjustments */
-        .navbar-collapse {
-            justify-content: flex-end; /* Align items to the right */
-        }
+      /* Responsive adjustments */
+      .navbar-collapse {
+        justify-content: flex-end; /* Align items to the right */
+      }
 
-        /* Mobile Navbar Toggler */
-        .navbar-toggler {
-            border: none;
-        }
+      /* Mobile Navbar Toggler */
+      .navbar-toggler {
+        border: none;
+      }
 
-        /* Profile Card Style */
-        .profile-card {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+      /* Profile Card Style */
+      .profile-card {
+        text-align: center;
+        margin-bottom: 30px;
+      }
 
+      .profile-img {
+        width: 150px; /* Fixed width */
+        height: 150px; /* Fixed height for circular shape */
+        object-fit: cover;
+        border-radius: 50%; /* Makes the image round */
+        margin-bottom: 15px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .profile-name {
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin: 10px 0 5px;
+      }
+
+      .profile-card p {
+        font-size: 1rem;
+        color: #6c757d; /* Color for the role */
+        margin-bottom: 10px;
+      }
+
+      /* Responsive Design for Smaller Screens */
+      @media (max-width: 768px) {
         .profile-img {
-            width: 150px; /* Fixed width */
-            height: 150px; /* Fixed height for circular shape */
-            object-fit: cover;
-            border-radius: 50%; /* Makes the image round */
-            margin-bottom: 15px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+          width: 120px; /* Smaller size for mobile */
+          height: 120px;
         }
+      }
 
-        .profile-name {
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin: 10px 0 5px;
-        }
+      .section-title {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
 
-        .profile-card p {
-            font-size: 1rem;
-            color: #6c757d; /* Color for the role */
-            margin-bottom: 10px;
-        }
+      .key-point {
+        margin-bottom: 20px;
+      }
 
-        /* Responsive Design for Smaller Screens */
-        @media (max-width: 768px) {
-            .profile-img {
-                width: 120px; /* Smaller size for mobile */
-                height: 120px;
-            }
-        }
+      .key-point h5 {
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
 
-        .section-title {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
+      .key-point p {
+        font-size: 1.1rem;
+        color: #6c757d;
+      }
 
-        .key-point {
-            margin-bottom: 20px;
-        }
+      footer {
+        background-color: #343a40;
+        color: white;
+        padding: 30px 0;
+        text-align: center;
+      }
 
-        .key-point h5 {
-            font-size: 1.3rem;
-            font-weight: bold;
-        }
+      footer a {
+        color: #f8f9fa;
+        text-decoration: none;
+      }
 
-        .key-point p {
-            font-size: 1.1rem;
-            color: #6c757d;
-        }
-
-        footer {
-            background-color: #343a40;
-            color: white;
-            padding: 30px 0;
-            text-align: center;
-        }
-
-        footer a {
-            color: #f8f9fa;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
+      footer a:hover {
+        text-decoration: underline;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="top"></div>
 
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="img/logobg.png" alt="Tech NexPro Logo" width="100" height="70" class="d-inline-block align-text-top">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="service.html">service</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="faq.html">Faq</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="policy.html">Policy</a>
-                    </li>
-                </ul>
-            </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="img/logobg.png"
+            alt="Tech NexPro Logo"
+            width="100"
+            height="70"
+            class="d-inline-block align-text-top"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="service.html">service</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="faq.html">Faq</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="policy.html">Policy</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
- About Section
+    About Section
     <section class="container my-5">
-      
-       <!--     <p>Tech NexPro is a leading provider of IT courses designed to enhance the skillset of professionals in the ever-evolving tech industry. We offer a wide range of IT training programs, including web development, data science, and mobile app development.</p>
+      <!--     <p>Tech NexPro is a leading provider of IT courses designed to enhance the skillset of professionals in the ever-evolving tech industry. We offer a wide range of IT training programs, including web development, data science, and mobile app development.</p>
         <p>Our mission is to provide high-quality education and hands-on training to help our students succeed in their careers and thrive in the IT industry.</p>
 <br> -->
 
- <!-- Team or Profiles Section -->
-        <section class="container my-5">
-            <h2 class="text-center mb-4">Meet Our Team</h2>
-            <hr>
-            <div class="row">
-                <!-- Profile Cards -->
-                <div class="col-md-3">
-                    <div class="profile-card">
-                        <img src="img/pro/srini.jpeg" alt="Profile 1" class="profile-img">
-                        <p class="profile-name">Srinivasan MCA</p>
-                        <p>Developer</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="profile-card">
-                        <img src="img/pro/m3.jpg" alt="Profile 2" class="profile-img">
-                        <p class="profile-name">S.Gowtham MCA</p>
-                        <p>Developer</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="profile-card">
-                        <img src="img/pro/mine1.jpg" alt="Profile 3" class="profile-img">
-                        <p class="profile-name">P.Gowtham MCA</p>
-                        <p>Developer</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="profile-card">
-                        <img src="img/pro/m4.jpg" alt="Profile 4" class="profile-img">
-                        <p class="profile-name">Dannushwaran</p>
-                        <p>Developer</p>
-                    </div>
-                </div>
-                <!-- Additional Profiles -->
-                <div class="col-md-3">
-                    <div class="profile-card">
-                        <img src="img/pro/NTS.jpeg" alt="Profile 5" class="profile-img">
-                        <p class="profile-name">Thamarai Selvan MCA</p>
-                        <p>Web Designer</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="profile-card">
-                        <img src="img/img.jpg" alt="Profile 6" class="profile-img">
-                        <p class="profile-name">Suriya</p>
-                        <p>Developer</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="profile-card">
-                        <img src="img/img.jpg" alt="Profile 7" class="profile-img">
-                        <p class="profile-name">Santhosh</p>
-                        <p>Developer</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="profile-card">
-                        <img src="img/img.jpg" alt="Profile 8" class="profile-img">
-                        <p class="profile-name">Faraz</p>
-                        <p>Developer</p>
-                    </div>
-                </div>
+      <!-- Team or Profiles Section -->
+      <section class="container my-5">
+        <h2 class="text-center mb-4">Meet Our Team</h2>
+        <hr />
+        <div class="row">
+          <!-- Profile Cards -->
+          <div class="col-md-3">
+            <div class="profile-card">
+              <img
+                src="img/pro/srini.jpeg"
+                alt="Profile 1"
+                class="profile-img"
+              />
+              <p class="profile-name">Srinivasan MCA</p>
+              <p>Developer</p>
             </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="container my-5">
-            <h2 class="text-center mb-4">About Us</h2>
-            <hr>
-            <h2 class="section-title text-center">Tech NexPro - Technology Next Process</h2>
-            <p class="text-center">Founded in 2025, Tech NexPro is an IT-based company dedicated to providing quality software solutions and educational services. Our primary focus is on innovation and the continuous development of new technologies that shape the future.</p>
-
-            <h3 class="section-title text-center">Key Areas of Focus</h3>
-
-            <div class="row">
-                <!-- Key Point 1 -->
-                <div class="col-md-4 key-point">
-                    <h5>Quality Software Solutions</h5>
-                    <p>We deliver cutting-edge software solutions tailored to meet the evolving needs of businesses, ensuring top-quality performance and user satisfaction.</p>
-                </div>
-
-                <!-- Key Point 2 -->
-                <div class="col-md-4 key-point">
-                    <h5>Comprehensive IT Education</h5>
-                    <p>We are committed to empowering individuals by providing top-tier education and hands-on training in the IT field, covering everything from web development to data science, mobile app development, and more.</p>
-                </div>
-
-                <!-- Key Point 3 -->
-                <div class="col-md-4 key-point">
-                    <h5>Innovation and New Technologies</h5>
-                    <p>At Tech NexPro, we are constantly pushing the boundaries of innovation. We aim to be at the forefront of new technologies, developing innovative solutions for the next generation of IT advancements.</p>
-                </div>
+          </div>
+          <div class="col-md-3">
+            <div class="profile-card">
+              <img
+                src="img/pro/Gowtham.jpg"
+                alt="Profile 2"
+                class="profile-img"
+              />
+              <p class="profile-name">S.Gowtham MCA</p>
+              <p>Software Engineer</p>
             </div>
-
-            <div class="row">
-                <!-- Key Point 4 -->
-                <div class="col-md-4 key-point">
-                    <h5>Future Vision - Product-Based Company</h5>
-                    <p>While our primary focus is on education and service provision today, we are working towards becoming a product-based company in the future. Our goal is to innovate, create, and bring to market unique tech products that solve real-world problems.</p>
-                </div>
-
-                <!-- Key Point 5 -->
-                <div class="col-md-4 key-point">
-                    <h5>Commitment to Excellence</h5>
-                    <p>We believe in delivering only the best—whether it’s our software products or educational services, we adhere to the highest standards of quality and excellence.</p>
-                </div>
-
-                <!-- Key Point 6 -->
-                <div class="col-md-4 key-point">
-                    <h5>Tailored Solutions for Every Learner</h5>
-                    <p>Our educational programs are designed to meet the diverse needs of learners, from beginners to professionals, providing the skills and knowledge necessary for career advancement in the IT industry.</p>
-                </div>
+          </div>
+          <div class="col-md-3">
+            <div class="profile-card">
+              <img
+                src="img/pro/mine1.jpg"
+                alt="Profile 3"
+                class="profile-img"
+              />
+              <p class="profile-name">P.Gowtham MCA</p>
+              <p>Developer</p>
             </div>
-
-            <div class="row">
-                <!-- Key Point 7 -->
-                <div class="col-md-4 key-point">
-                    <h5>Hands-on Training & Industry Collaboration</h5>
-                    <p>We collaborate with industry leaders to ensure our learners gain hands-on experience with real-world technologies and practices, making them job-ready upon course completion.</p>
-                </div>
-
-                <!-- Key Point 8 -->
-                <div class="col-md-4 key-point">
-                    <h5>Global Reach and Diversity</h5>
-                    <p>We aim to serve learners across the globe, offering courses and training in multiple languages and providing access to cutting-edge technology regardless of location.</p>
-                </div>
-
-                <!-- Key Point 9 -->
-                <div class="col-md-4 key-point">
-                    <h5>Sustainable Growth and Development</h5>
-                    <p>Our commitment to sustainable growth ensures that we remain adaptable in a fast-changing industry, while also focusing on the development of our people and long-term business goals.</p>
-                </div>
+          </div>
+          <div class="col-md-3">
+            <div class="profile-card">
+              <img src="img/pro/m4.jpg" alt="Profile 4" class="profile-img" />
+              <p class="profile-name">Dannushwaran</p>
+              <p>Developer</p>
             </div>
-        </section>
-            
+          </div>
+          <!-- Additional Profiles -->
+          <div class="col-md-3">
+            <div class="profile-card">
+              <img src="img/pro/NTS.jpeg" alt="Profile 5" class="profile-img" />
+              <p class="profile-name">Thamarai Selvan MCA</p>
+              <p>Web Designer</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="profile-card">
+              <img src="img/img.jpg" alt="Profile 6" class="profile-img" />
+              <p class="profile-name">Suriya</p>
+              <p>Developer</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="profile-card">
+              <img src="img/img.jpg" alt="Profile 7" class="profile-img" />
+              <p class="profile-name">Santhosh</p>
+              <p>Developer</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="profile-card">
+              <img src="img/img.jpg" alt="Profile 8" class="profile-img" />
+              <p class="profile-name">Faraz</p>
+              <p>Developer</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="container my-5">
+        <h2 class="text-center mb-4">About Us</h2>
+        <hr />
+        <h2 class="section-title text-center">
+          Tech NexPro - Technology Next Process
+        </h2>
+        <p class="text-center">
+          Founded in 2025, Tech NexPro is an IT-based company dedicated to
+          providing quality software solutions and educational services. Our
+          primary focus is on innovation and the continuous development of new
+          technologies that shape the future.
+        </p>
+
+        <h3 class="section-title text-center">Key Areas of Focus</h3>
+
+        <div class="row">
+          <!-- Key Point 1 -->
+          <div class="col-md-4 key-point">
+            <h5>Quality Software Solutions</h5>
+            <p>
+              We deliver cutting-edge software solutions tailored to meet the
+              evolving needs of businesses, ensuring top-quality performance and
+              user satisfaction.
+            </p>
+          </div>
+
+          <!-- Key Point 2 -->
+          <div class="col-md-4 key-point">
+            <h5>Comprehensive IT Education</h5>
+            <p>
+              We are committed to empowering individuals by providing top-tier
+              education and hands-on training in the IT field, covering
+              everything from web development to data science, mobile app
+              development, and more.
+            </p>
+          </div>
+
+          <!-- Key Point 3 -->
+          <div class="col-md-4 key-point">
+            <h5>Innovation and New Technologies</h5>
+            <p>
+              At Tech NexPro, we are constantly pushing the boundaries of
+              innovation. We aim to be at the forefront of new technologies,
+              developing innovative solutions for the next generation of IT
+              advancements.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Key Point 4 -->
+          <div class="col-md-4 key-point">
+            <h5>Future Vision - Product-Based Company</h5>
+            <p>
+              While our primary focus is on education and service provision
+              today, we are working towards becoming a product-based company in
+              the future. Our goal is to innovate, create, and bring to market
+              unique tech products that solve real-world problems.
+            </p>
+          </div>
+
+          <!-- Key Point 5 -->
+          <div class="col-md-4 key-point">
+            <h5>Commitment to Excellence</h5>
+            <p>
+              We believe in delivering only the best—whether it’s our software
+              products or educational services, we adhere to the highest
+              standards of quality and excellence.
+            </p>
+          </div>
+
+          <!-- Key Point 6 -->
+          <div class="col-md-4 key-point">
+            <h5>Tailored Solutions for Every Learner</h5>
+            <p>
+              Our educational programs are designed to meet the diverse needs of
+              learners, from beginners to professionals, providing the skills
+              and knowledge necessary for career advancement in the IT industry.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Key Point 7 -->
+          <div class="col-md-4 key-point">
+            <h5>Hands-on Training & Industry Collaboration</h5>
+            <p>
+              We collaborate with industry leaders to ensure our learners gain
+              hands-on experience with real-world technologies and practices,
+              making them job-ready upon course completion.
+            </p>
+          </div>
+
+          <!-- Key Point 8 -->
+          <div class="col-md-4 key-point">
+            <h5>Global Reach and Diversity</h5>
+            <p>
+              We aim to serve learners across the globe, offering courses and
+              training in multiple languages and providing access to
+              cutting-edge technology regardless of location.
+            </p>
+          </div>
+
+          <!-- Key Point 9 -->
+          <div class="col-md-4 key-point">
+            <h5>Sustainable Growth and Development</h5>
+            <p>
+              Our commitment to sustainable growth ensures that we remain
+              adaptable in a fast-changing industry, while also focusing on the
+              development of our people and long-term business goals.
+            </p>
+          </div>
+        </div>
+      </section>
     </section>
-    <a href="#top" id="backToTopBtn" class="btn btn-primary" >Back to Top</a>
-
+    <a href="#top" id="backToTopBtn" class="btn btn-primary">Back to Top</a>
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <h5>Contact Us</h5>
-                    <p><strong>Phone:</strong> +91 63696 80825</p>
-                    <p><strong>Phone:</strong> +91 79043 92365</p>
-                    <p><strong>Phone:</strong> +91 93605 91112</p>                     <p><strong>Email:</strong> technexpro@gmail.com</p>
-                    <p><strong>Location:</strong> Vaniyambadi, Thirupathur dist.</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5>Follow Us</h5>
-                    <a href="https://www.instagram.com" target="_blank" class="btn btn-outline-light btn-sm mx-2">Instagram</a>
-                    <a href="https://www.facebook.com" target="_blank" class="btn btn-outline-light btn-sm mx-2">Facebook</a>
-                    <a href="https://www.youtube.com" target="_blank" class="btn btn-outline-light btn-sm mx-2">YouTube</a>
-                    <a href="https://www.twitter.com" target="_blank" class="btn btn-outline-light btn-sm mx-2">Twitter</a>
-                    <a href="https://www.linkedin.com" target="_blank" class="btn btn-outline-light btn-sm mx-2">LinkedIn</a>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-white">Home</a></li>
-                        <li><a href="about.html" class="text-white">About</a></li>
-                        <li><a href="contact.html" class="text-white">Contact</a></li>
-                        <li><a href="#" class="text-white">Terms & Conditions</a></li>
-                        <li><a href="policy.html" class="text-white">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="mt-4">
-                <p>&copy; 2025 Tech NexPro. All Rights Reserved.</p>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <h5>Contact Us</h5>
+            <p><strong>Phone:</strong> +91 63696 80825</p>
+            <p><strong>Phone:</strong> +91 79043 92365</p>
+            <p><strong>Phone:</strong> +91 93605 91112</p>
+            <p><strong>Email:</strong> technexpro@gmail.com</p>
+            <p><strong>Location:</strong> Vaniyambadi, Thirupathur dist.</p>
+          </div>
+          <div class="col-md-4 mb-4">
+            <h5>Follow Us</h5>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              class="btn btn-outline-light btn-sm mx-2"
+              >Instagram</a
+            >
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              class="btn btn-outline-light btn-sm mx-2"
+              >Facebook</a
+            >
+            <a
+              href="https://www.youtube.com"
+              target="_blank"
+              class="btn btn-outline-light btn-sm mx-2"
+              >YouTube</a
+            >
+            <a
+              href="https://www.twitter.com"
+              target="_blank"
+              class="btn btn-outline-light btn-sm mx-2"
+              >Twitter</a
+            >
+            <a
+              href="https://www.linkedin.com"
+              target="_blank"
+              class="btn btn-outline-light btn-sm mx-2"
+              >LinkedIn</a
+            >
+          </div>
+          <div class="col-md-4 mb-4">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html" class="text-white">Home</a></li>
+              <li><a href="about.html" class="text-white">About</a></li>
+              <li><a href="contact.html" class="text-white">Contact</a></li>
+              <li><a href="#" class="text-white">Terms & Conditions</a></li>
+              <li>
+                <a href="policy.html" class="text-white">Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
         </div>
+        <div class="mt-4">
+          <p>&copy; 2025 Tech NexPro. All Rights Reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
+  </body>
 </html>
